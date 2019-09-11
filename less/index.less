@@ -20,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -30,7 +30,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 2;
+	font-size:1.1rem;
 }
 ol, ul {
 	list-style: none;
@@ -53,7 +54,130 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+.flexcolumn(){
+	display:flex;
+	flex-direction:column;
 }
 
+.flexrow(){
+	display:flex;
+	flex-direction:row;
+}
+
+@mainfont: 'Montserrat', sans-serif;
+
+@boxcolor: #E8ECEF;
+
+html, body {
+	height: 100%;
+	font-family: @mainfont;
+}
+
+.bigbox {
+	.flexcolumn();
+	background-color: @boxcolor;
+	border-radius: 5px;
+	padding:5%;
+}
+
+.container {
+	width: 55%;
+	margin: 0 auto;
+	@media screen and (max-width:500px) {
+		width:90%;
+	}
+}
+
+img {
+	height:300px;
+	width:400px;
+	border-radius: 10px;
+	@media screen and (max-width:500px) {
+		height:150px;
+		width:200px;
+	}
+}
+
+h1 {
+	font-size:2rem;
+	margin-top: 5%;
+}
+
+h3 {
+	font-size:1.5rem;
+	margin-top: 5%;
+	@media screen and (max-width:500px) {
+		font-size:1rem;
+		font-weight:600;
+	}
+}
+
+hr {
+	border: .5px solid lightgray;
+	width:100%;
+}
+
+button {
+	width:20%;
+	background-color:gray;
+	border: 1px solid gray;
+	border-radius:2px;
+	padding:2%;
+	font-size:1.2rem;
+	margin-top:2%;
+	@media screen and (max-width:500px) {
+		width:150px;
+	}
+	a {
+		color:white;
+		text-decoration:none;
+	}
+}
+
+.bottomtextwrapper {
+	display:flex;
+	flex-direction:row;
+	justify-content:space-evenly;
+}
+
+.bottomtext1 {
+	display:flex;
+	flex-direction:column;
+	p {
+		width:70%;
+	}
+}
+
+.bottomtext2 {
+	.flexcolumn();
+	width:300%;
+}
+
+footer {
+	text-align:center;
+	margin-top:3%;
+	margin-bottom:3%;
+}
+
+li {
+	border: .5px solid @boxcolor;
+	padding:2%;
+}
+
+header {
+	display:flex;
+	justify-content:flex-end;
+	nav {
+		.flexrow();
+		margin-top: 5%;
+		margin-bottom: 5%;
+		a {
+			color: black;
+			text-decoration: none;
+			margin-left: 65px;
+		}
+		@media screen and (max-width:500px) {
+			margin-left: 25px;
+		}
+	}
+}
